@@ -4,7 +4,8 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
-import projects.exception.Dbexception;
+import projects.exception.DbException;
+
 
 public class DbConnection {
 	private static String HOST = "localhost";
@@ -23,7 +24,7 @@ public class DbConnection {
 				return conn;
 			} catch (SQLException e) {
 				System.out.println("Unable to get connection at" + uri);
-				throw new Dbexception("Unable to get connection at \" + uri");
+				throw new DbException("Unable to get connection at \" + uri");
 			}			
 	}
 }
